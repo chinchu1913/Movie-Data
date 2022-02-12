@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="StaticFieldLeak" severity="ignore">
+        <ignore path="java/com/zattoo/movies/ui/home/HomeFragment.java" />
+    </issue>
+    <issue id="NotifyDataSetChanged" severity="ignore">
+        <ignore path="java/com/zattoo/movies/ui/home/HomeAdapter.kt" />
+    </issue>
+</lint>
