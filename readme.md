@@ -26,6 +26,8 @@ When evaluating your solution, we will focus on application architecture, code q
 git commit logs, as well as libraries used. Please add in the readme file any comments that may help
 the reviewers understand the solution, or any future improvement points.
 
-Please send your solution to android-recruitment@zattoo.com. 
+Please: 
+* do not delete `.git` folder 
+* send your solution to android-recruitment@zattoo.com. 
 
 Good luck and happy coding!
