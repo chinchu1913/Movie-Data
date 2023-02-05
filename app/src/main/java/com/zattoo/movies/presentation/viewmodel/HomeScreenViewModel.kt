@@ -10,8 +10,6 @@ import com.zattoo.movies.common.Resource
 import com.zattoo.movies.common.utils.NetworkUtils
 import com.zattoo.movies.domain.entities.Movie
 import com.zattoo.movies.domain.repository.MovieRepository
-import com.zattoo.movies.ui.HomeScreenEvent
-import com.zattoo.movies.ui.HomeScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
@@ -71,12 +69,13 @@ class HomeScreenViewModel @Inject constructor(
                                 moviesList = listings
                                 state = state.copy(
                                     moviesList = moviesList,
+                                    isError = false
                                 )
                             }
                         }
                         is Resource.Error -> {
                             state = state.copy(
-                                errorMessage = "Error Loading Items"
+                                isError = true,
                             )
                         }
                         is Resource.Loading -> {

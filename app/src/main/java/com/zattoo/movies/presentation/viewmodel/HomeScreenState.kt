@@ -1,4 +1,4 @@
-package com.zattoo.movies.ui
+package com.zattoo.movies.presentation.viewmodel
 
 import com.zattoo.movies.domain.entities.Movie
 
@@ -10,5 +10,5 @@ data class HomeScreenState(
     val isLoading: Boolean = false,
     val showConnectionError: Boolean = false,
     val showConnected: Boolean = false,
-    val errorMessage: String = "",
+    val isError: Boolean = false,
 )

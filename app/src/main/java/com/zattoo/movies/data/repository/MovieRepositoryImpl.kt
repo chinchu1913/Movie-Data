@@ -40,9 +40,11 @@ class MovieRepositoryImpl @Inject constructor(
             } catch (e: IOException) {
                 e.printStackTrace()
                 emit(Resource.Error(message = "Couldn't load data"))
+                emit(Resource.Loading(false))
             } catch (e: HttpException) {
                 e.printStackTrace()
                 emit(Resource.Error("Couldn't load data"))
+                emit(Resource.Loading(false))
             }
         }
     }

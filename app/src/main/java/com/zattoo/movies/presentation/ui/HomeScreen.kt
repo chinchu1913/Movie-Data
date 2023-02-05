@@ -13,8 +13,8 @@ import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshState
 import com.zattoo.movies.R
 import com.zattoo.movies.common.utils.priceAndAvailabilityToString
+import com.zattoo.movies.presentation.viewmodel.HomeScreenEvent
 import com.zattoo.movies.presentation.viewmodel.HomeScreenViewModel
-import com.zattoo.movies.ui.HomeScreenEvent
 
 @Composable
 fun HomeScreen(
@@ -56,7 +56,11 @@ fun HomeScreen(
             if (state.showConnected) {
                 ConnectedComponent()
             }
-        }
 
+            val showErrorLoadingData = state.moviesList.isEmpty() && state.isError
+            if (showErrorLoadingData) {
+                ErrorComponent()
+            }
+        }
     }
 }

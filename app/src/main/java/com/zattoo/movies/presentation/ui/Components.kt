@@ -2,9 +2,11 @@ package com.zattoo.movies.presentation.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -75,6 +77,17 @@ fun AppBarComponent(
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
             modifier = Modifier.weight(1f)
+        )
+    }
+}
+
+@Composable
+fun ErrorComponent() {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text(
+            stringResource(id = R.string.text_error_text),
+            style = MaterialTheme.typography.subtitle1.copy(fontSize = 14.sp),
+            textAlign = TextAlign.Center
         )
     }
 }

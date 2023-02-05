@@ -1,4 +1,4 @@
-package com.zattoo.movies.ui
+package com.zattoo.movies.presentation.viewmodel
 
 
 /*

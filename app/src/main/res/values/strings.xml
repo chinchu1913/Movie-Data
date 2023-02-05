@@ -2,6 +2,7 @@
     <string name="app_name">Zattoo</string>
     <string name="text_movies">Movies</string>
     <string name="text_no_connectivity">No internet connection</string>
+    <string name="text_error_text">Error Loading data</string>
     <string name="text_movies_header">Movies Header</string>
     <string name="text_connectivity">Connected</string>
     <string name="forbidden_error_message">Access to resource is forbidden</string>
