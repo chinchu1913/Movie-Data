@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 data class MovieListOffersDto(
     val image_base: String,
     @Json(name = "movie_offers")
-    val offers: List<MovieOffer>
+    val movie_offers: List<MovieOffer>
 ) {
     data class MovieOffer(
         val available: Boolean,

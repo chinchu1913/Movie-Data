@@ -1,12 +1,13 @@
 package com.zattoo.movies.di
 
 import android.content.Context
+import com.zattoo.movies.common.Constants
+import com.zattoo.movies.common.utils.NetworkUtils
 import com.zattoo.movies.data.remote.MovieApi
-import com.zattoo.movies.utils.NetworkUtils
-import common.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -36,7 +37,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideNetworkUtils(context: Context): NetworkUtils {
+    fun provideNetworkUtils(@ApplicationContext context: Context): NetworkUtils {
         return NetworkUtils(context)
     }
 }

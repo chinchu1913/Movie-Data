@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -18,6 +19,9 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
     }
 
     buildTypes {
@@ -35,9 +39,18 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        compose true
     }
     testOptions {
         unitTests.returnDefaultValues = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
     }
 }
 
@@ -53,14 +66,10 @@ dependencies {
     implementation Deps.legacySupport
     implementation Deps.glide
     annotationProcessor Deps.glide
-    implementation Deps.dagger_core
-    kapt Deps.dagger_compiler
     implementation Deps.retrofit
     implementation Deps.retrofitCoroutines
     implementation Deps.retrofitMoshi
     implementation Deps.okhttpInterceptor
-    implementation Deps.moshi
-    implementation Deps.moshiKotlin
     implementation Deps.coroutinesCore
     implementation Deps.coroutinesAndroid
     implementation Deps.liveData
@@ -79,4 +88,37 @@ dependencies {
 
     androidTestImplementation Deps.androidxJunit
     androidTestImplementation Deps.espresso
+
+    //swipe to refresh
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.23.1"
+
+    //compose
+    implementation "androidx.compose.ui:ui:$compose_version"
+    implementation "androidx.compose.material:material:$compose_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.activity:activity-compose:1.3.1'
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+
+    //Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:${Versions.hilt}"
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    kapt "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+
+    testImplementation 'com.google.truth:truth:1.0.1'
+
+    //retrofit
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+
+    //coil
+
+    implementation("io.coil-kt:coil-compose:2.0.0")
+
+
 }

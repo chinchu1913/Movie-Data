@@ -18,4 +18,8 @@
         <item name="titleTextColor">@color/toolbarTextColor</item>
         <item name="android:background">@color/toolbarColor</item>
     </style>
+
+    <style name="Theme.Movies" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
 </resources>

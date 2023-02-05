@@ -1,4 +1,4 @@
-package com.zattoo.movies.utils
+package com.zattoo.movies.common.utils
 
 import android.content.Context
 import android.net.ConnectivityManager
