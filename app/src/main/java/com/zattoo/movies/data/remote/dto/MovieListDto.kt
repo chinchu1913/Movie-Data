@@ -1,6 +1,6 @@
-package com.zattoo.movies.data
+package com.zattoo.movies.data.remote.dto
 
-data class MovieListEntity(
+data class MovieListDto(
     val movie_data: List<MovieData>
 ) {
     data class MovieData(

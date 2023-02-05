@@ -1,4 +1,4 @@
-package com.zattoo.movies.data.home
+package com.zattoo.movies.domain.entities
 
 data class Movie(
     val title: String,

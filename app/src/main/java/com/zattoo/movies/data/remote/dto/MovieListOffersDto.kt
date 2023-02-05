@@ -1,8 +1,8 @@
-package com.zattoo.movies.data
+package com.zattoo.movies.data.remote.dto
 
 import com.squareup.moshi.Json
 
-data class MovieListOffers(
+data class MovieListOffersDto(
     val image_base: String,
     @Json(name = "movie_offers")
     val offers: List<MovieOffer>
