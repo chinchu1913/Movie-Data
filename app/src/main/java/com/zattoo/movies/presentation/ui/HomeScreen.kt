@@ -1,24 +1,18 @@
 package com.zattoo.movies.presentation.ui
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshState
 import com.zattoo.movies.common.utils.priceAndAvailabilityToString
 import com.zattoo.movies.presentation.viewmodel.HomeScreenViewModel
 import com.zattoo.movies.ui.HomeScreenEvent
-import com.zattoo.movies.ui.theme.ToolbarColor
-import com.zattoo.movies.ui.theme.ToolbarTextColor
 
 @Composable
 fun HomeScreen(
@@ -56,33 +50,12 @@ fun HomeScreen(
         }
 
 
-        if (state.isNetworkConnected) {
-            Text(text = "Network is connected")
+        if (state.showConnectionError) {
+            NotConnectedComponent()
         }
 
-    }
-}
-
-/*
-Custom composable for the app bar
- */
-@Composable
-fun AppBarComponent(
-    title: String,
-) {
-    TopAppBar(
-        modifier = Modifier.fillMaxWidth(),
-        backgroundColor = ToolbarColor,
-        elevation = 2.dp
-    ) {
-        Spacer(modifier = Modifier.width(16.dp))
-        Text(
-            title, textAlign = TextAlign.Start,
-            fontSize = 16.sp,
-            color = ToolbarTextColor,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.weight(1f)
-        )
+        if (state.showConnected) {
+            ConnectedComponent()
+        }
     }
 }

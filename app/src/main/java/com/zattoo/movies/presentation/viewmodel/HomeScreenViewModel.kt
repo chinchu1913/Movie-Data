@@ -13,6 +13,8 @@ import com.zattoo.movies.domain.repository.MovieRepository
 import com.zattoo.movies.ui.HomeScreenEvent
 import com.zattoo.movies.ui.HomeScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -27,6 +29,7 @@ class HomeScreenViewModel @Inject constructor(
     ViewModel() {
     var state by mutableStateOf(HomeScreenState())
     private var moviesList: List<Movie> = mutableListOf()
+    private var lastConnectionStatus = true
 
     init {
         viewModelScope.launch {
@@ -36,8 +39,17 @@ class HomeScreenViewModel @Inject constructor(
     }
 
     private suspend fun observeNetworkConnection() {
-        networkUtils.getNetworkLiveData().asFlow().collect {
-            state = state.copy(isNetworkConnected = it)
+        networkUtils.getNetworkLiveData().asFlow().collect { isConnected ->
+            val isConnectionIsBack = !lastConnectionStatus && isConnected
+            if (isConnectionIsBack) {
+                coroutineScope {
+                    state = state.copy(showConnected = true)
+                    delay(2000L)
+                    state = state.copy(showConnected = false)
+                }
+            }
+            lastConnectionStatus = isConnected
+            state = state.copy(showConnectionError = !isConnected)
         }
     }
 
