@@ -3,7 +3,8 @@ package com.zattoo.movies
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.zattoo.movies.presentation.ui.HomeScreen
+import com.ramcosta.composedestinations.DestinationsNavHost
+import com.zattoo.movies.presentation.ui.NavGraphs
 import com.zattoo.movies.ui.theme.MoviesTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -13,7 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MoviesTheme {
-                HomeScreen()
+                DestinationsNavHost(navGraph = NavGraphs.root)
             }
         }
     }

@@ -11,11 +11,15 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshState
+import com.ramcosta.composedestinations.annotation.Destination
+import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.zattoo.movies.R
 import com.zattoo.movies.common.utils.priceAndAvailabilityToString
 import com.zattoo.movies.presentation.viewmodel.HomeScreenEvent
 import com.zattoo.movies.presentation.viewmodel.HomeScreenViewModel
 
+@RootNavGraph(start = true) // sets this as the start destination of the default nav graph
+@Destination
 @Composable
 fun HomeScreen(
     viewModel: HomeScreenViewModel = hiltViewModel()

@@ -28,6 +28,7 @@ object Versions {
     const val material = "1.3.0"
     const val swipelayout = "1.1.0"
     const val coil = "2.0.0"
+    const val composeNavigation = "1.5.5-beta"
 
     //Test
     const val assertj = "3.6.2"
@@ -85,6 +86,11 @@ object Deps {
     const val hiltCompilerAndroid =  "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
     const val hiltCompiler =  "androidx.hilt:hilt-compiler:${Versions.hiltCompiler}"
     const val hiltNavigation =  "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigation}"
+
+
+    //compose navigation
+    const val composeNavigationDestination = "io.github.raamcosta.compose-destinations:core:${Versions.composeNavigation}"
+    const val composeNavigationKsp = "io.github.raamcosta.compose-destinations:ksp:${Versions.composeNavigation}"
 
 
 
