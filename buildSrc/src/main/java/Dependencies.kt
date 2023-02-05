@@ -1,9 +1,14 @@
 object Versions {
     //Core
     const val kotlin = "1.6.10"
+    const val compose = "1.1.1"
+    const val activityCompose = "1.3.1"
     const val dagger = "2.38.1"
     const val navigation = "2.3.2"
     const val hilt = "2.40.5"
+    const val hiltCompiler = "1.0.0"
+    const val hiltViewModel = "1.0.0-alpha03"
+    const val hiltNavigation = "1.0.0"
     const val retrofit = "2.9.0"
     const val okhttp = "4.9.0"
     const val moshi = "1.11.0"
@@ -22,6 +27,7 @@ object Versions {
     const val appcompat = "1.2.0"
     const val material = "1.3.0"
     const val swipelayout = "1.1.0"
+    const val coil = "2.0.0"
 
     //Test
     const val assertj = "3.6.2"
@@ -32,6 +38,8 @@ object Versions {
     const val jUnit = "4.12"
     const val espresso = "3.3.0"
     const val androidxJunit = "1.1.2"
+    const val googleTruth = "1.0.1"
+    const val swipeRefreshCompose = "0.23.1"
 }
 
 object AppMetaData {
@@ -60,10 +68,25 @@ object Deps {
         "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val coil = "io.coil-kt:coil-compose:${Versions.coil}"
+    const val swipeRefreshCompose =
+        "com.google.accompanist:accompanist-swiperefresh:${Versions.swipeRefreshCompose}"
+
+    const val composeUi = "androidx.compose.ui:ui:${Versions.compose}"
+    const val composeMaterial = "androidx.compose.material:material:${Versions.compose}"
+    const val composeToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.compose}"
+    const val composeJunit = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
+    const val activityCompose = "androidx.activity:activity-compose:${Versions.activityCompose}"
+
 
     //Dagger
-    const val dagger_core = "com.google.dagger:dagger:${Versions.dagger}"
-    const val dagger_compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+    const val hiltAndroid =  "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltViewModel =  "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltViewModel}"
+    const val hiltCompilerAndroid =  "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val hiltCompiler =  "androidx.hilt:hilt-compiler:${Versions.hiltCompiler}"
+    const val hiltNavigation =  "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavigation}"
+
+
 
     //Networking
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
@@ -99,9 +122,12 @@ object Deps {
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockito}"
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlin}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
-    const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
+    const val coroutinesTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutinesTest}"
     const val assertJ = "org.assertj:assertj-core:${Versions.assertj}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     const val androidxJunit = "androidx.test.ext:junit:${Versions.androidxJunit}"
-    const val espressoIdlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.espresso}"
+    const val espressoIdlingResource =
+        "androidx.test.espresso:espresso-idling-resource:${Versions.espresso}"
+    const val googleTruth = "com.google.truth:truth:${Versions.googleTruth}"
 }
