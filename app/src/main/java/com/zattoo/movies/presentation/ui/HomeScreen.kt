@@ -6,10 +6,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.SwipeRefreshState
+import com.zattoo.movies.R
 import com.zattoo.movies.common.utils.priceAndAvailabilityToString
 import com.zattoo.movies.presentation.viewmodel.HomeScreenViewModel
 import com.zattoo.movies.ui.HomeScreenEvent
@@ -21,7 +23,7 @@ fun HomeScreen(
     val state = viewModel.state
     val isRefreshing = SwipeRefreshState(isRefreshing = state.isLoading)
 
-    Scaffold(topBar = { AppBarComponent("Movies") }) {
+    Scaffold(topBar = { AppBarComponent(stringResource(id = R.string.text_movies)) }) {
 
         SwipeRefresh(
             state = isRefreshing,
