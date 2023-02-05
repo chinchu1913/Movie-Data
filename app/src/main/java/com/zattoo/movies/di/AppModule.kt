@@ -2,7 +2,7 @@ package com.zattoo.movies.di
 
 import android.content.Context
 import com.zattoo.movies.common.Constants
-import com.zattoo.movies.common.utils.NetworkUtils
+import com.zattoo.movies.common.utils.NetworkUtilsImpl
 import com.zattoo.movies.data.remote.MovieApi
 import dagger.Module
 import dagger.Provides
@@ -35,9 +35,9 @@ object AppModule {
             .create()
     }
 
-    @Singleton
     @Provides
-    fun provideNetworkUtils(@ApplicationContext context: Context): NetworkUtils {
-        return NetworkUtils(context)
+    @Singleton
+    fun provideNetworkUtils(@ApplicationContext context: Context): NetworkUtilsImpl {
+        return NetworkUtilsImpl(context)
     }
 }

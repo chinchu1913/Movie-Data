@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asFlow
 import androidx.lifecycle.viewModelScope
 import com.zattoo.movies.common.Resource
-import com.zattoo.movies.common.utils.NetworkUtils
+import com.zattoo.movies.common.utils.NetworkUtil
 import com.zattoo.movies.domain.entities.Movie
 import com.zattoo.movies.domain.repository.MovieRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,7 +22,7 @@ ViewModel for Movie Home screen
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(
     private val repository: MovieRepository,
-    private val networkUtils: NetworkUtils
+    private val networkUtils: NetworkUtil
 ) :
     ViewModel() {
     var state by mutableStateOf(HomeScreenState())

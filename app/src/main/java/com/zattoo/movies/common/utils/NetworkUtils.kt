@@ -9,11 +9,15 @@ import android.os.Build
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-class NetworkUtils(private val context: Context) : ConnectivityManager.NetworkCallback() {
+interface NetworkUtil {
+    fun getNetworkLiveData(): LiveData<Boolean>
+}
+
+class NetworkUtilsImpl(private val context: Context) : ConnectivityManager.NetworkCallback(), NetworkUtil {
 
     private val networkLiveData: MutableLiveData<Boolean> = MutableLiveData()
 
-    fun getNetworkLiveData(): LiveData<Boolean> {
+    override fun getNetworkLiveData(): LiveData<Boolean> {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
