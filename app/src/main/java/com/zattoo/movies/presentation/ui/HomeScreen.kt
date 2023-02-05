@@ -49,15 +49,14 @@ fun HomeScreen(
                     )
                 }
             }
+            if (state.showConnectionError) {
+                NotConnectedComponent()
+            }
+
+            if (state.showConnected) {
+                ConnectedComponent()
+            }
         }
 
-
-        if (state.showConnectionError) {
-            NotConnectedComponent()
-        }
-
-        if (state.showConnected) {
-            ConnectedComponent()
-        }
     }
 }
