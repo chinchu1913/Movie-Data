@@ -1,6 +1,6 @@
 object Versions {
     //Core
-    const val kotlin = "1.4.21"
+    const val kotlin = "1.6.21"
     const val dagger = "2.38.1"
     const val navigation = "2.3.2"
     const val retrofit = "2.9.0"
@@ -56,8 +56,8 @@ object Deps {
     const val swiperefresh =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipelayout}"
     const val navigationFragment =
-        "android.arch.navigation:navigation-fragment-ktx:${Versions.navigation}"
-    const val navigationUi = "android.arch.navigation:navigation-ui-ktx:${Versions.navigation}"
+        "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 
     //Dagger
