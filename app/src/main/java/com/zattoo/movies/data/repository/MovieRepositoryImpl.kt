@@ -53,18 +53,18 @@ class MovieRepositoryImpl @Inject constructor(
         movieDetails: MovieListDto,
         movieListOffersDto: MovieListOffersDto
     ): List<Movie> {
-        return movieListOffersDto.movie_offers.mapNotNull { offers ->
-            val details = movieDetails.movie_data.find { it.movie_id == offers.movie_id }
+        return movieListOffersDto.movieOffers.mapNotNull { offers ->
+            val details = movieDetails.movieData.find { it.movieId == offers.movieId }
             details?.let {
                 val movieOfferPrice = offers.price
                 val currency = Currency(movieOfferPrice.last().toString())
                 val price = movieOfferPrice.substring(0 until movieOfferPrice.length - 1).toFloat()
                 Movie(
-                    id = it.movie_id,
+                    id = it.movieId,
                     title = it.title,
-                    subtitle = it.sub_title,
+                    subtitle = it.subTitle,
                     price = Price(price, currency),
-                    image = Image(movieListOffersDto.image_base + offers.image),
+                    image = Image(movieListOffersDto.imageBase + offers.image),
                     availability = offers.available
                 )
             }

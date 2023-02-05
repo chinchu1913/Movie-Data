@@ -39,16 +39,16 @@ class HomeScreenViewModel @Inject constructor(
     private suspend fun observeNetworkConnection() {
         networkUtils.getNetworkLiveData().asFlow().collect { isConnected ->
             //show the connection error is the connection status is disconnected
-            state = state.copy(showConnectionError = !isConnected)
+            state = state.copy(showNetworkUnavailable = !isConnected)
             //show the connection success message if the connection if disconnected and reconnected back.
             val isConnectionIsBack = !lastConnectionStatus && isConnected
             if (isConnectionIsBack) {
                 coroutineScope {
                     //Refresh the data once the connection is back
                     getMoviesList()
-                    state = state.copy(showConnected = true)
+                    state = state.copy(showNetworkConnected = true)
                     delay(ViewModelConstants.CONNECTION_BACK_MSG_TIMEOUT)
-                    state = state.copy(showConnected = false)
+                    state = state.copy(showNetworkConnected = false)
                 }
             }
             lastConnectionStatus = isConnected

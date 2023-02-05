@@ -8,7 +8,7 @@ States in home screen
 data class HomeScreenState(
     val moviesList: List<Movie> = emptyList(),
     val isLoading: Boolean = false,
-    val showConnectionError: Boolean = false,
-    val showConnected: Boolean = false,
+    val showNetworkUnavailable: Boolean = false,
+    val showNetworkConnected: Boolean = false,
     val isError: Boolean = false,
 )

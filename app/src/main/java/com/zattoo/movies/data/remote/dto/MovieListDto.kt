@@ -3,14 +3,14 @@ package com.zattoo.movies.data.remote.dto
 import com.squareup.moshi.Json
 
 data class MovieListDto(
-    @Json(name = "movie_data")
-    val movie_data: List<MovieData>
+    @field:Json(name = "movie_data")
+    val movieData: List<MovieData>
 ) {
     data class MovieData(
-        @Json(name = "movie_id")
-        val movie_id: Int,
-        @Json(name = "sub_title")
-        val sub_title: String,
+        @field:Json(name = "movie_id")
+        val movieId: Int,
+        @field:Json(name = "sub_title")
+        val subTitle: String,
         val title: String
     )
 }

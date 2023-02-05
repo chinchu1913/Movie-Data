@@ -49,11 +49,11 @@ fun HomeScreen(
                     )
                 }
             }
-            if (state.showConnectionError) {
+            if (state.showNetworkUnavailable) {
                 NotConnectedComponent()
             }
 
-            if (state.showConnected) {
+            if (state.showNetworkConnected) {
                 ConnectedComponent()
             }
 
