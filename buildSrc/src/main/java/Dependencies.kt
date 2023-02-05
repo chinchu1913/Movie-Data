@@ -1,8 +1,9 @@
 object Versions {
     //Core
-    const val kotlin = "1.6.21"
+    const val kotlin = "1.6.10"
     const val dagger = "2.38.1"
     const val navigation = "2.3.2"
+    const val hilt = "2.40.5"
     const val retrofit = "2.9.0"
     const val okhttp = "4.9.0"
     const val moshi = "1.11.0"
@@ -35,7 +36,7 @@ object Versions {
 
 object AppMetaData {
     const val id = "com.zattoo.movies"
-    const val compileSdkVersion = 29
+    const val compileSdkVersion = 31
     const val targetSdkVersion = 29
     const val minSdkVersion = 21
     const val buildToolsVersion = "30.0.3"
