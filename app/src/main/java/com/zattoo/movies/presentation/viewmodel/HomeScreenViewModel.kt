@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 /*
-ViewModel for folder Home screen
+ViewModel for Movie Home screen
  */
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(

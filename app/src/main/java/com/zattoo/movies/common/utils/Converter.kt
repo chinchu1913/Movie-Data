@@ -1,5 +1,3 @@
-@file:JvmName("Converter")
-
 package com.zattoo.movies.common.utils
 
 fun priceAndAvailabilityToString(price: String, isAvailable: Boolean): String {
