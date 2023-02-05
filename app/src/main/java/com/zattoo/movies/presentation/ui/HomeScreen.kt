@@ -57,8 +57,7 @@ fun HomeScreen(
                 ConnectedComponent()
             }
 
-            val showErrorLoadingData = state.moviesList.isEmpty() && state.isError
-            if (showErrorLoadingData) {
+            if (state.isError) {
                 ErrorComponent()
             }
         }

@@ -74,9 +74,11 @@ class HomeScreenViewModel @Inject constructor(
                             }
                         }
                         is Resource.Error -> {
-                            state = state.copy(
-                                isError = true,
-                            )
+                            if (moviesList.isEmpty()) {
+                                state = state.copy(
+                                    isError = true,
+                                )
+                            }
                         }
                         is Resource.Loading -> {
                             state = state.copy(isLoading = result.isLoading)
