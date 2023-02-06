@@ -1,33 +1,37 @@
 ## Zattoo - Android Code Challenge
 
-We would like you to complete a simple programming task. The goal is to allow you to demonstrate
-your best programming practices, habits and your approach to common problems by modifying and
-improving an existing working project. The areas of improvement can be architecture, testing, UI,
-fixing bugs or any other mistake you find. You are encouraged to finish the task within one week but
-that’s only to facilitate, the actual time needed is of course much less.
+Android coding challenge solution
 
-Feel free to use any libraries that, in your opinion, are appropriate for the task. You can also
-change the DI setup, as you want. Please don’t use libraries that solve the whole problem at once,
-e.g. download and display the whole list of items based just on a provided url. Remember, we want to
-evaluate your coding skills.
+* Dependency injection migration to dagger hilt
 
-The app should continue to:
-* Display a list of movies available at movie_offers
-* Display the additional data for each movie, available at movie_data
-* Have a UI, that displays the parent and child items in a distinguishable manner
+* Rearchitected the existing app to clean architecture inorder to improve the maintainability and testability
 
-The solution needs:
-* To contain git commit logs that reflect your progress, you can commit locally without the need to
-  push your commits to a remote repository.
-* To be provided as a zip archive or you can upload it to a private online repository.
-* To compile, run and unit tests run as expected.
+* View model with screen states and events is introduced to manage the UI states. 
 
-When evaluating your solution, we will focus on application architecture, code quality, unit tests,
-git commit logs, as well as libraries used. Please add in the readme file any comments that may help
-the reviewers understand the solution, or any future improvement points.
+* The UI is migrated to Jetpack compose
 
-Please: 
-* do not delete `.git` folder 
-* send your solution to android-recruitment@zattoo.com. 
+* Navigation component for jetpack compose is user for screen navigation
 
-Good luck and happy coding!
+* Unit testing for domain layer is implemented with mockito and google truth library
+
+* The network disconnected/connected states are handled with the view model. 
+
+* Issue fixes - The network "Connected" message was not showing when the connection is back
+
+* Kotlin version migrated to 1.6.21 and build error is fixed. 
+
+* Created abstraction for network util class to avoid the existing concrete dependency. 
+
+* Auto refresh is implemented when the network connection is back. 
+
+Folder structure
+
+* Common package contains all the shared files and utilities like converter, network util, constants and resource generic class
+  
+* UI is moved to presentation package
+  
+* domain layer contains the repository abstraction and entity or the movie
+  
+* Data layer contains the remote network calls and DTOs
+  
+* ui.theme contains the compose theme implementation
