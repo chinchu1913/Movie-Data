@@ -1,4 +1,4 @@
-## Zattoo - Android Code Challenge
+ Android Code Challenge
 
 Android coding challenge solution
 
